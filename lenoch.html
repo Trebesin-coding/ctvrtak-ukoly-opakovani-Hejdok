@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="input" type="text" id="Jmeno">
+    <h1>Líný učitel</h1>
+    <p>
+    <label for="Jmeno">Jméno:</label>
+    <button class="tlacitko">Známka</button>
+    <p class="output"></p>
+    </p>
+    
+
+    <script>
+        let y = 0
+
+            let input = document.querySelector(".input")
+            let output = document.querySelector(".output")
+            let tlacitko = document.querySelector(".tlacitko")
+            let nahodneCislo = Math.floor(Math.random() * 5) + 1;
+
+        function mark() {
+            let nahodneCislo = Math.floor(Math.random() * 5) + 1;
+            output.innerText = "Známka:" + nahodneCislo + "iiu"
+            
+                if (nahodneCislo == 1){
+                    document.body.style.background = "green";
+                    output.innerText = "Známka:" + nahodneCislo + "😍"
+                }
+
+                if (nahodneCislo == 2){
+                    document.body.style.background = "yellow";
+                    output.innerText = "Známka:" + nahodneCislo + "😁"
+                }
+
+                if (nahodneCislo == 3){
+                    document.body.style.background = "orange";
+                    output.innerText = "Známka:" + nahodneCislo + "😊"
+                }
+
+                if (nahodneCislo == 4){
+                    document.body.style.background = "red";
+                    output.innerText = "Známka:" + nahodneCislo + "😒"
+                }
+
+                if (nahodneCislo == 5){
+                    document.body.style.background = "black";
+                    output.innerText = "Známka:" + nahodneCislo + "☠️"
+                }}
+        tlacitko.addEventListener("click", function() {
+            mark()
+        }
+        )
+    </script>
+</body>
+</html>
