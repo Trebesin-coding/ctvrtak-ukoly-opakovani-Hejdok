@@ -1,60 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Líný učitel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            transition: background-color 0.5s;
+            color: #333;
+        }
+        input.input {
+            padding: 8px;
+            font-size: 16px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        button.tlacitko {
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button.tlacitko:hover {
+            background-color: #0056b3;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        p.output {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <input class="input" type="text" id="Jmeno">
+    <input class="input" type="text" id="Jmeno" placeholder="Zadej jméno" />
     <h1>Líný učitel</h1>
-    <p>
     <label for="Jmeno">Jméno:</label>
     <button class="tlacitko">Známka</button>
     <p class="output"></p>
-    </p>
-    
 
     <script>
-        let y = 0
-
-            let input = document.querySelector(".input")
-            let output = document.querySelector(".output")
-            let tlacitko = document.querySelector(".tlacitko")
-            let nahodneCislo = Math.floor(Math.random() * 5) + 1;
+        let input = document.querySelector(".input");
+        let output = document.querySelector(".output");
+        let tlacitko = document.querySelector(".tlacitko");
 
         function mark() {
             let nahodneCislo = Math.floor(Math.random() * 5) + 1;
-            output.innerText = "Známka:" + nahodneCislo + "iiu"
-            
-                if (nahodneCislo == 1){
-                    document.body.style.background = "green";
-                    output.innerText = "Známka:" + nahodneCislo + "😍"
-                }
 
-                if (nahodneCislo == 2){
-                    document.body.style.background = "yellow";
-                    output.innerText = "Známka:" + nahodneCislo + "😁"
-                }
-
-                if (nahodneCislo == 3){
-                    document.body.style.background = "orange";
-                    output.innerText = "Známka:" + nahodneCislo + "😊"
-                }
-
-                if (nahodneCislo == 4){
-                    document.body.style.background = "red";
-                    output.innerText = "Známka:" + nahodneCislo + "😒"
-                }
-
-                if (nahodneCislo == 5){
-                    document.body.style.background = "black";
-                    output.innerText = "Známka:" + nahodneCislo + "☠️"
-                }}
-        tlacitko.addEventListener("click", function() {
-            mark()
+            if (nahodneCislo == 1) {
+                document.body.style.background = "green";
+                output.innerText = "Známka: " + nahodneCislo + " 😍";
+            } 
+            if (nahodneCislo == 2) {
+                document.body.style.background = "yellow";
+                output.innerText = "Známka: " + nahodneCislo + " 😁";
+            } 
+            if (nahodneCislo == 3) {
+                document.body.style.background = "orange";
+                output.innerText = "Známka: " + nahodneCislo + " 😊";
+            } 
+            if (nahodneCislo == 4) {
+                document.body.style.background = "red";
+                output.innerText = "Známka: " + nahodneCislo + " 😒";
+            } 
+            if (nahodneCislo == 5) {
+                document.body.style.background = "black";
+                output.style.color = "white";
+                output.innerText = "Známka: " + nahodneCislo + " ☠️";
+                return;
+            }
+            output.style.color = "#333";
         }
-        )
+
+        tlacitko.addEventListener("click", function () {
+            mark();
+        });
     </script>
 </body>
 </html>
