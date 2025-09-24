@@ -32,14 +32,14 @@ def pridat_znacku(jmeno):
         else:
             print(f"Student {jmeno} nebyl přidán.")
     else:
-        nova_znacka = random.randint(1, 5)
-        data[jmeno].append(nova_znacka)
-        print(f"Student {jmeno} má novou známku: {nova_znacka}")
+        nova_znamka = random.randint(1, 5)
+        data[jmeno].append(nova_znamka)
+        print(f"Student {jmeno} má novou známku: {nova_znamka}")
 
         prumer = vypocet_prumer(data[jmeno])
         print(f"Průměr známek studenta {jmeno} je {prumer:.2f}")
 
-        if prumer < 2.0:
+        if prumer > 4.0:
             print("Bohužel, průměr je nízký. Snad se to zlepší... 😢")
 
         uloz_data(data)
